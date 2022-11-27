@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>master table</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+            integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    </head>
+
+    <body>
+
+        <h1 class="main-heading">INPUT CONSTRAINTS</h1>
+
+        <div class="main-container">
+
+            <div class="meeting-time-container">
+                <div class="heading">
+                    <h2>Add meeting time</h2>
+                </div>
+                <table id="meeting-time-table">
+                    <tr id="mwf">
+                        <td class="days">M-W-F</td>
+                        <td><input type="time" placeholder="start time" class="start-time" id="mwf-start-time"></td>
+                        <td><input type="number" placeholder="total number of
+                                hours" id="mwf-total-time"></td>
+                        <td><input type="number" placeholder="class duration" name="class duration"
+                                id="mwf-class-duration"></td>
+                        <td><button class="btn mwfci clear-btn" id="mwf-clr-btn">clear</button></td>
+                    </tr>
+
+                    <tr id="tts">
+                        <td class="days">T-T-S</td>
+                        <td><input type="time" placeholder="start time" class="start-time" id="tts-start-time"></td>
+                        <td><input type="number" placeholder="total number of
+                                hours" id="tts-total-time"></td>
+                        <td><input type="number" placeholder="class duration" name="class duration"
+                                id="tts-class-duration"></td>
+                        <td><button class="btn ttsci clear-btn" id="tts-clr-btn">clear</button></td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <div class="room-container">
+                <h2>Add Rooms</h2>
+
+                <table id="room-table">
+                    <tr id="rtr0">
+                        <th>Room number</th>
+                        <th>Type</th>
+                        <th>Student Capacity</th>
+                        <th>activity</th>
+                    </tr>
+                    <tr id="lrtr">
+                        <td>
+                            <input id="r-no" class="number input" type="number" placeholder="room number">
+                        </td>
+
+                        <td>
+                            <select id="r-type">
+                                <option value="lab">laboratory</option>
+                                <option value="class" selected="selected">regular
+                                    class</option>
+                            </select>
+                        </td>
+
+                        <td>
+                            <input id="r-capacity" class="number input" type="number" placeholder="room capacity">
+                        </td>
+
+                        <td id="buttons">
+                            <button class="btn add-row">add</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="teacher-container">
+
+                <h2> Add Teachers </h2>
+
+
+                <table id="teacher-data-table">
+
+                    <tr id="ttr0">
+                        <th>sno.</th>
+                        <th>name</th>
+                        <th>phone</th>
+                        <th>email</th>
+                        <th>actions</th>
+                    </tr>
+
+                    <tr id="last">
+                        <td class="input-p1"><input class="input-teacher-details" id="id-inp" type="text"
+                                placeholder="id"></td>
+                        <td class="input-p1"><input class="input-teacher-details" id="name-inp" type="text"
+                                placeholder="name"></td>
+                        <td class="input-p1"><input class="input-teacher-details" id="phone-inp" type="number"
+                                placeholder="phone"></td>
+                        <td class="input-p1"><input class="email-inp" id="email-inp" type="text" placeholder="email">
+                        </td>
+                        <td class="input-p1 buttons"><button class="btn
+                                add-row">add</button></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+            <div class="subj-container">
+
+                <h2>Add subjects</h2>
+
+                <table id="subject-table">
+                    <tr id="str0">
+                        <th class="col-1">subject code</th>
+                        <th class="col-2">subject name</th>
+                        <th class="col-3">max students</th>
+                        <th class="col-4">instructurs</th>
+                        <th class="col-5">actions</th>
+                    </tr>
+
+                    <tr id="inp-row">
+                        <td class="input-box"><input type="number" placeholder="subject id"></td>
+                        <td class="input-box"><input type="text" name="" id="" placeholder="subject name"></td>
+                        <td class="input-box"><input type="number" placeholder="max students"></td>
+                        <td>
+                            <button class='btn' id="add-teacher">add teachers</button>
+                        </td>
+                        <td><button class="btn add-subject-row">add</button></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <div class="dept-container">
+                <h2>Add Department</h2>
+
+                <table id="dept-table">
+                    <tr id="dtr0">
+                        <th class="col-1">department code</th>
+                        <th class="col-2">department name</th>
+                        <th class="col-4">subjects</th>
+                        <th class="col-5">actions</th>
+                    </tr>
+
+                    <tr id="ldtr">
+                        <td class="input-box"><input type="number" placeholder="department id"></td>
+                        <td class="input-box"><input type="text" name="" id="" placeholder="department name"></td>
+                        <td>
+                            <button class='btn' id="add-subject">add subjects</button>
+                        </td>
+
+                        <td>
+                            <button class="btn add-dept-row">add</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="final-response-container">
+                <button class="big-btn save" onclick="save_data()"><i class="icon fa fa-floppy-o"
+                        aria-hidden="true"></i>save and generate table</button>
+                <button class="big-btn reset" onclick="reset_data()"><i class="icon fa fa-trash"
+                        aria-hidden="true"></i>reset</button>
+            </div>
+
+            <div class="final-time-table-container">
+                <table id="time-table">
+                    <tr>
+                        <th>Class</th>
+                        <th>Department</th>
+                        <th>Course (Code & Max students)</th>
+                        <th>Room (Capacity)</th>
+                        <th>Instructor</th>
+                        <th>Meeting time</th>
+                    </tr>
+
+                </table>
+
+                <div class="time-table-options">
+                    <button class="big-btn print" onclick="printTable()">
+                        <div class="fa fa-print"></div>
+                        print
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="alert-box">
+            <div class="alert">
+                Do you really want to delete this row?
+            </div>
+
+            <div class="btns alert-confirmation-box">
+                <button id="alert-btn-yes" class="alert-btn yes">yes</button>
+                <button id="alert-btn-no" class="alert-btn no">no</button>
+            </div>
+        </div>
+
+        <div class="teachers-list">
+            <h3>Select Teachers</h3>
+            <table id="teacher-list-table">
+                <tr>
+                    <th>code</th>
+                    <th>name</th>
+                    <th>select</th>
+                </tr>
+            </table>
+            <div class="btns">
+                <button id="teacher-btn-yes" class="alert-btn yes">yes</button>
+                <button id="teacher-btn-no" class="alert-btn no">no</button>
+            </div>
+        </div>
+
+
+        <div class="subject-list">
+            <h3>Select Subject</h3>
+            <table id="subject-list-table">
+                <tr>
+                    <th>code</th>
+                    <th>name</th>
+                    <th>select</th>
+                </tr>
+            </table>
+            <div class="btns">
+                <button id="subject-btn-yes" class="alert-btn yes">yes</button>
+                <button id="subject-btn-no" class="alert-btn no">no</button>
+            </div>
+        </div>
+
+
+
+
+    </body>
+    <script src="./eel.js"></script>
+    <script src="js/main.js"></script>
+
+</html>
