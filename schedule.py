@@ -45,17 +45,27 @@ class Schedule(object):
 
     return self
 
+  def string_check (self, str1, str2):
+    total = 0
+    for l1, l2 in zip(str1, str2):
+      if (l1 == l2):
+        total += 1
+    if total == len(str1):
+      return 1
+    else:
+      return 0
+
   def calculate_fitness(self):
     number_of_conflicts = 0
     for idx, _class in enumerate(self._classes):
       if _class.room.seating_capacity < _class.course.max_number_of_students:
         number_of_conflicts += 1
       
-      for _tmp_class in self._classes[idx:]:
-        if _class.meeting_time == _tmp_class.meeting_time and _class.id != _tmp_class.id:
+      for m_idx, _tmp_class in enumerate(self._classes[idx:]):
+        if self.string_check(_class.meeting_time.time, _tmp_class.meeting_time.time) and (_class.id != _tmp_class.id):
 
           # here the check should be updated to name atleast
-          if _class.room == _tmp_class.room:
+          if _class.room.number == _tmp_class.room.number:
             number_of_conflicts += 1
           
           if _class.instructor == _tmp_class.instructor:
